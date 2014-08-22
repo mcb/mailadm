@@ -1,7 +1,10 @@
 :protocol: postgres
 :host: 127.0.0.1
 :database: mails
-:user: username
+:user: mailadm
 :password: password
-
-
+:myorigin: your.hostname.com
+:mailadm_user: mailadm
+:mailbox_size_limit: 51200000
+:message_size_limit: 51200000
+:postmaster_address: alwaysexsits@mail.com
