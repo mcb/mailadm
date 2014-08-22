@@ -6,7 +6,7 @@ module Mailadm
       end
 
       def self.db
-        config[:host]
+        config[:database]
       end
 
       def self.protocol

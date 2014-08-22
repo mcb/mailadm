@@ -1,3 +1,5 @@
+Sequel.extension :migration
+
 def migrations_dir
   Mailadm::Util::PathHelper.absolute_path("lib/db/migrations")
 end

@@ -1,7 +1,7 @@
-:protocol: "postgres"
-:host: "localhost"
-:host: "mails"
-:username: "username"
-:password: "password"
+:protocol: postgres
+:host: 127.0.0.1
+:database: mails
+:user: username
+:password: password
 
 
