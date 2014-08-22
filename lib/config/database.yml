@@ -1,0 +1,7 @@
+:protocol: "postgres"
+:host: "localhost"
+:host: "mails"
+:username: "username"
+:password: "password"
+
+
