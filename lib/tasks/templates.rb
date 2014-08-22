@@ -21,7 +21,7 @@ end
 def convert_from_erb(conf_templates)
   conf_templates.each do |conf_file|
     template = File.read( conf_file )
-    data = File.open(Mailadm::Util::PathHelper.absolute_path("lib/config/database.yml"), "r") { |file| YAML.load(file) }
+    data = File.open(Mailadm::Util::PathHelper.config_path, "r") { |file| YAML.load(file) }
     ts = Mailadm::TemplateValues.new(data)
     config = ERB.new( template, 0, '-' )
     File.open("#{OUTPUT_DIR}/#{conf_file.sub('.erb', '').sub('lib/templates/', '')}", "w") { |file| file.write(config.result( ts.get_binding )) }

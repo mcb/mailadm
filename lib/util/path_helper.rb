@@ -5,6 +5,10 @@ module Mailadm
         root = File.expand_path('../../', File.dirname(__FILE__))
         File.join(root, *relative_parts)
       end
+
+      def self.config_path
+        absolute_path('config/database.yml')
+      end
     end
   end
 end

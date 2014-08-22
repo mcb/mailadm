@@ -22,7 +22,7 @@ module Mailadm
       end
 
       def self.config
-        File.open(Mailadm::Util::PathHelper.absolute_path("lib/config/database.yml"), "r") { |file| YAML.load(file) }
+        File.open(Mailadm::Util::PathHelper.config_path, "r") { |file| YAML.load(file) }
       end
     end
   end
