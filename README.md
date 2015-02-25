@@ -8,7 +8,7 @@ Mail Admin for Dovecot / Postfix
 
 mailadm consists of two parts:
 - the admin interface
-- Rake tasks to create config files for dovecot/postfix
+- Rake tasks to migrate DB for dovecot/postfix
 
 ## Admin interface
 Still work in progress, move along. Nothing to see here.
@@ -22,9 +22,6 @@ You might want to invoke the Rake tasks with a simple
 ``` bundle exec rake db:migrate ``` will setup the database with the given credentials. Please alter lib/config/database.yml accordingly.
 
 As of now, only postgres is supported. Please do not ask why, we want to setup a serious mail server, don't we?
-
-### Template generation
-``` bundle exec rake templates:generate``` will create a template_out directory in lib, bundling all config files needed with the correct structure.
 
 ## Disclaimer
 
