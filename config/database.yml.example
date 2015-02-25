@@ -7,4 +7,4 @@
 :mailadm_user: mailadm
 :mailbox_size_limit: 51200000
 :message_size_limit: 51200000
-:postmaster_address: alwaysexsits@mail.com
+:postmaster_address: postmaster@mail.com
