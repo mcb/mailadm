@@ -22,13 +22,13 @@ module Mailadm
       end
 
       def self.config
-        File.open(Mailadm::Util::PathHelper.config_path, "r") { |file| YAML.load(file) }
+        File.open(Mailadm::Util::PathHelper.config_path, "r") { |file| ::YAML.load(file) }
       end
     end
   end
 end
 
 
-Sequel::Model.plugin(:schema)
+Sequel::Model.plugin(:schema, :validation_helpers, :timestamps)
 Sequel::Model.raise_on_save_failure = false # Do not throw exceptions on failure
-Sequel::Model.db = Sequel.connect(Mailadm::DB::Connector.handler, :loggers => [Logger.new($stdout)])
+Sequel::Model.db = Sequel.connect(Mailadm::DB::Connector.handler, :loggers => [::Logger.new($stdout)])

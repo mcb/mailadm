@@ -1,0 +1,12 @@
+<form action="/users/<%= @user.id%>" accept-charset="UTF-8" method="post">
+  <input name="_method" value="put" type="hidden"/>
+  <div class="form-group">
+    <label for="username">Username: </label>
+    <%= @user.username %>@<%= @user.domain %>
+  </div>
+  <div class="form-group">
+    <label for="password">Password: </label>
+    <input type="text" id="password" name="user[password]" placeholder="Enter a Password" value="">
+  </div>
+  <input type="submit" value="Update">
+</form>

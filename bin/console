@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+environment = ENV["RACK_ENV"] || "development"
+ENV["RACK_ENV"] = environment
+
+require 'rubygems'
+require 'bundler/setup'
+
+require 'pry'
+require 'sequel'
+
+require_relative '../config/boot'
+
+
+old_prompt = Pry.config.prompt
+if environment == "production"
+  env = Pry::Helpers::Text.red(environment.upcase)
+else
+  env = Pry::Helpers::Text.yellow(environment.upcase)
+end
+Pry.config.prompt = [
+  proc {|*a| "Mailadm #{env} #{old_prompt.first.call(*a)}"},
+  proc {|*a| "Mailadm #{env} #{old_prompt.second.call(*a)}"},
+]
+
+Pry.start

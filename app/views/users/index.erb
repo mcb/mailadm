@@ -1,0 +1,21 @@
+<table class="pure-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Domain</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.username %></td>
+      <td><%= user.domain %></td>
+      <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
